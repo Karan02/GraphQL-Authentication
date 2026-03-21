@@ -1,0 +1,45 @@
+query getUser{
+  user{
+    id
+    email
+  }
+}
+
+mutation Logout{
+  logout{
+    email
+  }
+}
+
+mutation login{
+  login(email:"krnptl1234@gmail.com",password:"admin"){
+    id,
+    email
+  }
+}
+
+mutation Login($email:String,$password:String){
+  login(email:$email,password:$password){
+    id,
+    email
+  }
+}
+
+mutation Signup($email:String,$password:String){
+  signup(email:$email,password:$password){
+    id,
+    email
+  }
+}
+
+query variables
+
+{
+  "email":"krnptl1234@gmail.com",
+  "password":"admin"
+}
+
+{
+  "email":"krnptl12345@gmail.com",
+  "password":"Admin"
+}
